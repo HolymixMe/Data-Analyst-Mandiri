@@ -1,4 +1,5 @@
-create database mandiri;
+create database if not exists mandiri;
+
 use mandiri;
 
 create table `users_data` (
@@ -47,4 +48,5 @@ create table `transactions_data` (
   `zip` double default null,
   `mcc` int(11) default null,
   `errors` varchar(50) default null
+
 );
