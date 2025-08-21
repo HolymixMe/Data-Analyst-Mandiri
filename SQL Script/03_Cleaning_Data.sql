@@ -1,5 +1,6 @@
 use mandiri;
 
+-- Cek Duplikat
 select count(*) - count(distinct id) as duplicate_users
 from mandiri.users_data;
 
@@ -9,6 +10,7 @@ from mandiri.cards_data;
 select count(*) - count(distinct id) as duplicate_transactions
 from mandiri.transactions_data;
 
+-- Menghapus Duplikat 
 create table mandiri.transactions_data_new as
 select distinct *
 from mandiri.transactions_data;
@@ -18,6 +20,7 @@ drop table mandiri.transactions_data;
 alter table mandiri.transactions_data_new
 rename to transactions_data;
 
+-- Imputasi Missing Value
 select errors, count(*) as total_errors
 from mandiri.transactions_data
 group by errors;
