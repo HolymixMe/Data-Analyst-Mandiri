@@ -6,12 +6,6 @@ The database consists of three main tables:
 - **cards_data** → Card details (brand, credit limit, chip, etc.)  
 - **transactions_data** → Transaction details (amount, merchant, MCC, etc.)
 
-## 📌 Database Structure  
-Database: `mandiri`  
-- `users_data`  
-- `cards_data`  
-- `transactions_data`
-
 ## ✅ Prerequisites
 - MySQL Server (8.0+) 
 - Database management tool (MySQL Workbench, pgAdmin, DBeaver, or command line)
