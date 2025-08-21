@@ -22,7 +22,6 @@ CREATE DATABASE mandiri;
 ``` 
 3. Run the SQL scripts in sequence:
 ```bash
-# Note: The database creation is handled in the DDL script
 mysql -u your_username -p mandiri < sql/01_DDL.sql
 mysql -u your_username -p mandiri < sql/02_Import_Data.sql
 mysql -u your_username -p mandiri < sql/03_Cleaning_Data.sql
