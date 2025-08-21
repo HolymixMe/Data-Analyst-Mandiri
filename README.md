@@ -22,10 +22,10 @@ CREATE DATABASE mandiri;
 ``` 
 3. Run the SQL scripts in sequence:
 ```bash
-mysql -u your_username -p mandiri < SQL Script/01_DDL.sql
-mysql -u your_username -p mandiri < SQL Script/02_Import_Data.sql
-mysql -u your_username -p mandiri < SQL Script/03_Cleaning_Data.sql
-mysql -u your_username -p mandiri < SQL Script/04_EDA.sql
+mysql -u your_username -p mandiri < SQL_Script/01_DDL.sql
+mysql -u your_username -p mandiri < SQL_Script/02_Import_Data.sql
+mysql -u your_username -p mandiri < SQL_Script/03_Cleaning_Data.sql
+mysql -u your_username -p mandiri < SQL_Script/04_EDA.sql
 ```
 Using MySQL Workbench:
 - Open each SQL file in MySQL Workbench
