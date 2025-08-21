@@ -11,9 +11,7 @@ Database: `mandiri`
 - `users_data`  
 - `cards_data`  
 - `transactions_data`
-
-> ⚠️ Note: The raw data was directly imported into DBeaver (MySQL/MariaDB).  
-> Therefore, no `CREATE TABLE` or `INSERT` statements are included in this repository.  
+  
 
 
 
