@@ -20,7 +20,7 @@ Database: `mandiri`
 ```sql
 use mandiri;
 
--- Memperbaiki Tipe Kolom
+-- memperbaiki tipe kolom
 
 alter table mandiri.cards_data 
     modify column id varchar(50) null,
@@ -57,7 +57,7 @@ update mandiri.transactions_data
 alter table mandiri.transactions_data 
 	modify column amount decimal(15,2);
 
--- Cleaning Data
+-- cleaning data
 
 select count(*) - count(distinct id) as duplicate_users
 from mandiri.users_data;
@@ -68,32 +68,32 @@ from mandiri.cards_data;
 select count(*) - count(distinct id) as duplicate_transactions
 from mandiri.transactions_data;
 
-CREATE TABLE mandiri.transactions_data_new AS
-SELECT DISTINCT *
-FROM mandiri.transactions_data;
+create table mandiri.transactions_data_new as
+select distinct *
+from mandiri.transactions_data;
 
-DROP TABLE mandiri.transactions_data;
+drop table mandiri.transactions_data;
 
-ALTER TABLE mandiri.transactions_data_new
-RENAME TO transactions_data;
+alter table mandiri.transactions_data_new
+rename to transactions_data;
 
 select errors, count(*) as total_errors
 from mandiri.transactions_data
 group by errors;
 
-UPDATE mandiri.transactions_data
-SET errors = 'None'
-WHERE TRIM(errors) = '';
+update mandiri.transactions_data
+set errors = 'none'
+where trim(errors) = '';
 
-UPDATE mandiri.transactions_data
-SET merchant_state = 'ONLINE'
-WHERE TRIM(merchant_state) = '';
+update mandiri.transactions_data
+set merchant_state = 'online'
+where trim(merchant_state) = '';
 
-UPDATE mandiri.transactions_data
-SET zip = 0
-WHERE zip is null;
+update mandiri.transactions_data
+set zip = 0
+where zip is null;
 
--- Exploratory Data Analyst
+-- exploratory data analyst
 
 select current_age, count(*) as user_count
 from mandiri.users_data
@@ -119,5 +119,6 @@ select mcc, count(*) as total_transactions, sum(amount) as total_spent
 from mandiri.transactions_data
 group by mcc
 order by total_spent desc
+
 
 
