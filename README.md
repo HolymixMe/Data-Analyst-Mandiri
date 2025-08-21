@@ -20,7 +20,7 @@ Database: `mandiri`
 ```sql
 use mandiri;
 
--- memperbaiki tipe kolom
+-- Memperbaiki Tipe Kolom
 
 alter table mandiri.cards_data 
     modify column id varchar(50) null,
@@ -57,7 +57,7 @@ update mandiri.transactions_data
 alter table mandiri.transactions_data 
 	modify column amount decimal(15,2);
 
--- cleaning data
+-- Cleaning Data
 
 select count(*) - count(distinct id) as duplicate_users
 from mandiri.users_data;
@@ -93,7 +93,7 @@ update mandiri.transactions_data
 set zip = 0
 where zip is null;
 
--- exploratory data analyst
+-- Exploratory Data Analyst
 
 select current_age, count(*) as user_count
 from mandiri.users_data
